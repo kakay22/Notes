@@ -1,0 +1,371 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body{
+	height: 100vh;
+	width: 100vw;
+	background: #eee;
+}
+.container{
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+}
+.header{
+	background: #2e2d2d;
+	padding: 15px 15px;
+	text-align: center;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header h2{
+	letter-spacing: -1.5px;
+	transform: translateX(-340px);
+}
+.container .sideBar{
+	position: absolute;
+	height: 100%;
+	width: 150px;
+	background: rgb(58, 57, 57);
+	top: 0;
+	box-shadow: 2px 2px 5px black;
+	padding-top: 63px;
+	overflow-x: hidden;
+}
+.sideBar .menuBtn{
+	background: none;
+	color: white;
+	border: none;
+	font-size: 20px;
+	position: absolute;
+	right: 13px;
+	top: 2%;
+	cursor: pointer;
+}
+.sideBar button{
+	width: 150px;
+	padding: 20px 0 20px 45px;
+	font-size: 15px;
+	text-align: left;
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	color: white;
+	position: relative;
+}
+.sideBar button .icon{
+	position: absolute;
+	left: 9%;
+	font-size: 20px;
+}
+.sideBar .aboutBtn .icon{
+	transform: translateX(6px);
+}
+.sideBar button:hover{
+	background: gray !important;
+	color: black;
+}
+.container .contents{
+	height: 87.5%;
+	position: absolute;
+	right: 2%;
+	top: 10.7%;
+	width: 84.8%;
+	background: white;
+	border-radius: 5px;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
+.header .searchBar{
+	background: white;
+	height: 34px;
+	width: 300px;
+	color: black;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding-left: 5px;
+	font-size: 20px;
+	border-radius: 10px;
+}
+.searchBar input{
+	height: 90%;
+	width: 90%;
+	padding-left: 10px;
+	border: none;
+	font-size: 14px;
+	outline: none;
+}
+.contents center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 25px;
+	color: gray;
+}
+.contents .addNoteContainer, .contents .manageNotesContainer, .contents .logsContainer, .contents .aboutContainer{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	width: 100%;
+	background: white;
+}
+.contents .addNoteContainer{
+	display: flex;
+	justify-content: start;
+	align-items: left;
+	flex-direction: column;
+	padding: 20px 50px 50px 50px;
+}
+.addNoteContainer #title{
+	border: none;
+	outline: none;
+	font-size: 25px;
+	margin-bottom: 30px;
+}
+.addNoteContainer #description{
+	border: none;
+	outline: none;
+	font-size: 17px;
+	color: gray;
+}
+.addNoteContainer .addBtn{
+	width: 150px;
+	border: none;
+	padding: 9px 0;
+	background: rgb(73, 116, 73);
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+.addNoteContainer .addBtn:hover{
+	background: rgb(76, 150, 76);
+}
+.addNoteContainer h3{
+	margin-bottom: 30px;
+}
+.addNoteContainer .message{
+	width: 80%;
+	padding: 7px 0;
+	text-align: center;
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.contents .noteContainer{
+	position: absolute;
+	top: 4%;
+	left: 2.2%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+}
+.noteContainer .note{
+	background: #eee;
+	width: 250px;
+	height: 150px;
+	padding: 10px;
+	position: relative;
+	cursor: pointer;
+}
+.note .currentTime{
+	position: absolute;
+	bottom: 3%;
+	font-size: 12px;
+	right: 2%;
+	color: gray;
+}
+.note .title{
+	position: absolute;
+	font-size: 20px;
+	font-weight: bolder;
+	margin-bottom: 10px;
+	width: 95%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.note .description{
+	position: absolute;
+	top: 30%;
+	font-size: 14px;
+	width: 92%;
+	height: 80px;
+	word-wrap: break-word;
+	overflow-y: scroll;
+}
+.description::-webkit-scrollbar{
+	width: 0;
+}
+.contents .manageNotesContainer{
+	padding: 40px;
+	position: relative;
+}
+.contents .manageNotesContainer .manageTable{
+	width: 100%;
+	text-align: left;
+	margin-top: 30px;
+	border-collapse: collapse;
+}
+.contents .manageNotesContainer .manageTable thead tr th{
+	height: 30px;
+	background: rgb(175, 174, 174);
+	border-bottom: none;
+}
+.manageNotesContainer .manageTable thead tr th, td{
+	padding-left: 10px;
+}
+.manageNotesContainer .manageTable tbody tr td{
+	height: 45px;
+	width: 2%;
+}
+.manageNotesContainer .manageTable tr, td{
+	border-bottom: 1px solid black;
+	width: 2%;
+}
+.manageNotesContainer .manageTable td button{
+	border: none;
+	width: 50px;
+	cursor: pointer;
+}
+.manageNotesContainer .manageTable td button:hover{
+	background: gray;
+}
+.manageNotesContainer .isEditingContainer{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgb(58, 57, 57, .5);
+	backdrop-filter: blur(2px);
+	overflow: hidden;
+}
+.isEditingContainer .isEditingForm{
+	background: #eee;
+	padding: 40px 20px 30px 20px;
+	position: relative;
+}
+.isEditingContainer .isEditingForm label{
+	font-size: 13px;
+}
+.isEditingContainer .isEditingForm input, textarea{
+	margin: 5px 0 15px 0;
+	width: 350px;
+}
+.isEditingContainer .isEditingForm #editedTitle{
+	height: 30px;
+	padding-left: 8px;
+	font-size: 15px;
+	outline: none;
+}
+.isEditingContainer .isEditingForm .closeBtn{
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	padding: 5px 15px;
+	background: none;
+	font-size: 30px;
+	border: none;
+	cursor: pointer;
+}
+.isEditingContainer .isEditingForm .closeBtn:hover{
+	background: gray;
+}
+.manageNotesContainer table td{
+	max-height: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.isEditingContainer .isEditingForm .saveBtn{
+	width: 100%;
+	border: none;
+	font-size: 17px;
+	background: gray;
+	padding: 7px 0;
+	cursor: pointer;
+	color: white;
+}
+.manageNotesContainer .isDeletingContainer{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgb(58, 57, 57, .5);
+	backdrop-filter: blur(2px);
+	overflow: hidden;
+	flex-direction: column;
+}
+.manageNotesContainer .isDeletingContainer .warningLogo{
+	font-size: 90px;
+	text-shadow: 0 0 3px red;
+	color: red;
+}
+
+.manageNotesContainer .isViewingContainer{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgb(58, 57, 57, .5);
+	backdrop-filter: blur(2px);
+	overflow: hidden;
+	flex-direction: column;
+}
+.manageNotesContainer .isViewingContainer .viewingCard{
+	padding: 20px 30px;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	position: relative;
+}
+.manageNotesContainer .isViewingContainer .viewingCard .viewingCloseBtn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: none;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+.manageNotesContainer .isViewingContainer .viewingCard .viewingCloseBtn:hover{
+	background: gray;
+}
+.logsContainer{
+	padding: 20px 20px;
+}
+.logsContainer .logsTable{
+	width: 80%;
+	text-align: left;
+	margin: 20px 0 20px 30px;
+	border-collapse: collapse;
+}
+.logsContainer .logsTable thead tr th{
+	background: rgb(207, 206, 206);
+}
+.logsContainer .logsTable thead tr th, td{
+	width: 35%;
+	border-bottom: 1px solid black;
+	padding: 10px 0;
+}
